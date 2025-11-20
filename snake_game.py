@@ -1,12 +1,13 @@
-import pygame
-import sys
 import random
+import sys
+
+import pygame
 
 # Game configuration
 WINDOW_WIDTH = 600
 WINDOW_HEIGHT = 400
 BLOCK_SIZE = 20  # Grid size for snake and food alignment
-FPS = 12         # Snake speed (frames per second)
+FPS = 12  # Snake speed (frames per second)
 
 # Colors
 BLACK = (0, 0, 0)
@@ -152,9 +153,27 @@ def main():
             overlay = pygame.Surface((WINDOW_WIDTH, WINDOW_HEIGHT), pygame.SRCALPHA)
             overlay.fill((0, 0, 0, 160))
             screen.blit(overlay, (0, 0))
-            show_text(screen, "GAME OVER", 40, WHITE, (WINDOW_WIDTH // 2, WINDOW_HEIGHT // 2 - 30))
-            show_text(screen, f"Score: {score}", 28, WHITE, (WINDOW_WIDTH // 2, WINDOW_HEIGHT // 2 + 10))
-            show_text(screen, "Press R/Enter to Restart or Q/Esc to Quit", 18, WHITE, (WINDOW_WIDTH // 2, WINDOW_HEIGHT // 2 + 50))
+            show_text(
+                screen,
+                "GAME OVER",
+                40,
+                WHITE,
+                (WINDOW_WIDTH // 2, WINDOW_HEIGHT // 2 - 30),
+            )
+            show_text(
+                screen,
+                f"Score: {score}",
+                28,
+                WHITE,
+                (WINDOW_WIDTH // 2, WINDOW_HEIGHT // 2 + 10),
+            )
+            show_text(
+                screen,
+                "Press R/Enter to Restart or Q/Esc to Quit",
+                18,
+                WHITE,
+                (WINDOW_WIDTH // 2, WINDOW_HEIGHT // 2 + 50),
+            )
 
         pygame.display.flip()
         clock.tick(FPS)
